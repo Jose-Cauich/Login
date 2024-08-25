@@ -30,21 +30,14 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Inicialización de sesiones
-const init = async () => {
-    const conexion = await conecction();
-    const sessionStore = new MySQLStore({}, conexion);
+app.use(session({
+    key: 'Cookies',
+    secret: key,
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}));
 
-    app.use(session({
-        key: 'Cookies',
-        secret: key,
-        sessionStore,
-        resave: false,
-        saveUninitialized: true,
-        cookie: { secure: false }
-    }));
-};
-
-init();
 
 // Definición de rutas
 app.get('/', (req, res) => {
