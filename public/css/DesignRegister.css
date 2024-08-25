@@ -9,7 +9,6 @@ form {
     max-width: 350px;
     background-color: #ffffff;
     margin: 5% auto;
-    /*10% top y buttom y auto para derecha e izquiera dependiendo del espacio disponible osea al redimensionar la pantalla*/
     padding-bottom: 2px;
 
 }
@@ -45,7 +44,6 @@ form {
 #identifier,
 #job-roles {
 
-    /*los px son mejores que los vh por que aunque redimencionemos la pantalla el div conservaran su tamaño */
     height: 27px;
     border: 2px solid #014550;
     border-radius: 7px;
@@ -58,11 +56,9 @@ form {
     height: 84px;
     display: block;
     padding-top: 5px;
-    /*block: ocupa todo el ancho disponible del div y no permite a nadie a su lado*/
 }
 
 [btn="btn-submit"] {
-    /* background-color: #419356;*/
     width: 0px;
     height: 30px;
     margin-top: 6px;
@@ -70,7 +66,6 @@ form {
 }
 
 [btn="btn-bttn"] {
-    /*background-color: red;*/
     width: 0px;
     height: 30px;
     margin-top: 6px;
