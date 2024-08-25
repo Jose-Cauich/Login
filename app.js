@@ -30,6 +30,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Inicialización de sesiones
+
 app.use(session({
     key: 'Cookies',
     secret: key,
@@ -57,6 +58,7 @@ app.get('/Start', (req, res) => {
 });
 
 app.post('/Access', async (req, res) => {
+
     try {
         const conexion = await conecction();
         const { user, pass } = req.body;
@@ -192,6 +194,7 @@ app.get('/SessionActive', (req, res) => {
             msg: 'Debe de iniciar sesión',
         });
     }
+    res.end();
 });
 
 app.get('/SessionOff', (req, res) => {
