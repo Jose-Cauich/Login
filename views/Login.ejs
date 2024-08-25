@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/Desing.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+
+<body>
+
+    <div class="container--active">
+        <!-- cuando hago el post del form me llama a la ruta /Access con el tipo de ruta post -->
+        <form action="/Access" method="post">
+            <img class="image" src="/img/Avatar.png" alt="" height="70">
+            <div class="title">
+                <h1>¡Bienvenido!</h1>
+                <p>Hola, ¿cómo va el día?</p>
+            </div>
+            <div class="input-class">
+                <div class="input-group">
+                    <i class="material-icons">person</i>
+                    <input id="user" name="user" type="text" placeholder="User">
+                </div>
+
+                <div class=" input-group">
+                    <i class="material-icons">lock</i>
+                    <input id="pass" name="pass" type="password" placeholder="Password">
+                </div>
+            </div>
+            <div class="button">
+                <div class="button-class">
+                    <button id="button-submit" name="button-submit" type="submit">Login</button>
+                    <a href="/SignUp"><button type="button">SignUp</button></a>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-active">
+        <footer id="footer-describe"> &copy; Derechos Reservados 2024</footer>
+        <p>CauichDev</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <% if (typeof alert !=='undefined' ) { %>
+        <script>
+            Swal.fire({
+                title: '<%=alertTitle%>',
+                position: '<%=position%>',
+                text: '<%=alertMessage%>',
+                icon: '<%=alertIcon%>',
+                showConfirmButton: '<%showConfirmButton%>',
+                timer: '<%=time%>',
+            }).then(() => {
+                window.location = '<%=ruta%>'
+            })
+        </script>
+        <% } %>
+
+</body>
+
+</html>

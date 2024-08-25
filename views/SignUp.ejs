@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="/css/DesignRegister.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container--active">
+        <form action="/Register" method="post">
+            <div class="title">
+                <h1>¡Bienvenido a bordo!</h1>
+                <p>Registrate para comenzar</p>
+            </div>
+
+            <div class="input-group">
+
+                <div class="input-active-controllers">
+                    <i icon="input--id"></i>
+                    <input type="text" id="identifier" name="identifier" value="" placeholder="ID">
+                </div>
+
+                <div class="input-active-controllers">
+                    <i icon="input--name"></i>
+                    <input type="text" id="name" name="name" value="" placeholder="Name">
+                </div>
+
+                <div class="input-active-controllers">
+                    <i icon="input--occupation"></i>
+                    <select name="roles" id="roles">
+                        <option value="" disabled selected>Position</option>
+                        <option value="frontend">Front-End</option>
+                        <option value="backend">Back-End</option>
+                        <option value="fullstack">Full-Stack</option>
+                        <option value="design">Design</option>
+                        <option value="tester-junior">Tester-Junior</option>
+                        <option value="devops">DevOps</option>
+                        <option value="database-admin">Database-Administrator</option>
+                    </select>
+                </div>
+
+                <div class="input-active-controllers">
+                    <i icon="input--number"></i>
+                    <input type="text" id="phone" name="phone" value="" placeholder="Phone">
+                </div>
+
+                <div class="input-active-controllers">
+                    <i icon="input--email"></i>
+                    <input type="email" id="email" name="email" value="" placeholder="Email">
+                </div>
+
+                <div class="input-active-controllers">
+                    <i icon="input--pass"></i>
+                    <input type="password" id="pass" name="pass" value="" placeholder="Password">
+                </div>
+
+            </div>
+
+            <div class="button-action">
+                <div btn="btn-submit">
+                    <button type="submit">SignUp</button>
+                </div>
+                <div btn="btn-bttn">
+                    <a href="/Login"><button type="button">Login</button></a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <footer class="footer-active">
+        <div footer="footer-find">
+            <h5>&copy; Derechos Reservados</h5>
+            <p>CauichDev</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if (typeof alert !=='undefined' ) { %>
+        <script>
+            Swal.fire({
+                title: '<%=alertTitle%>',
+                position: '<%=position%>',
+                text: '<%=alertMessage%>',
+                icon: '<%=alertIcon%>',
+                showConfirmButton: '<%showConfirmButton%>',
+                timer: '<%=time%>',
+
+            }).then(() => {
+                window.location = '<%=ruta%>'
+            });
+        </script>
+        <% } %>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/DesingStart.css">
+    <title>Página de Sesión</title>
+</head>
+
+<body>
+    <div class="container">
+        <%if(session){%>
+            <h1>Bienvenido, <%=name%>
+            </h1>
+            <a href="/SessionOff"><button type="button" class="boton">Logout</button></a>
+            <%}else{%>
+                <h1>Bienvenido, <%=msg%>
+                </h1>
+                <a href="/Login"><button type="button" class="boton">Login</button></a>
+                <%}%>
+    </div>
+</body>
+
+</html>
