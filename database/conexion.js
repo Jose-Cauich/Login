@@ -4,21 +4,18 @@ const config = require(path.join(__dirname, '..', 'config', 'config'));
 const mysql = require('promise-mysql');
 
 const conecction = async () => {
-
     try {
         const createconnection = await mysql.createConnection({
             host: config.host,
             database: config.database,
             user: config.user,
             password: config.password,
-        })
-        return createconnection
+        });
+        return createconnection;
+    } catch (err) {
+        console.error('No podemos conectarnos a la base de datos:', err);
+        throw err;
     }
+};
 
-    catch {
-        console.log('no podemos conectarnos a la base de datos', error);
-    }
-}
-
-module.exports = { conecction }
-
+module.exports = { conecction };

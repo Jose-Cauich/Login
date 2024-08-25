@@ -125,6 +125,8 @@ app.post('/Access', async (req, res) => {
                 time: 1500,
                 ruta: '/Login'
             });
+
+            conexion.end();
         }
     } catch (error) {
         console.error('Error al conectar la base de datos:', error);
